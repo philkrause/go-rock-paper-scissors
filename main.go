@@ -8,16 +8,21 @@ import (
 
 func main() {
 	shoot()
+}
 
+func randomInt(min, max int) int {
+	return min + rand.Intn(max-min)
 }
 
 func shoot() {
+
 	rand.Seed(time.Now().UnixNano())
 
 	ai := randomInt(0, 3)
 	input := 0
 
 	fmt.Println("Choose 0 for Rock, 1 for Paper, 2 for Scissors.")
+
 	fmt.Scanln(&input)
 
 	switch {
@@ -44,8 +49,4 @@ func shoot() {
 		fmt.Println("You Win. Scissors beats Rock")
 	}
 
-}
-
-func randomInt(min, max int) int {
-	return min + rand.Intn(max-min)
 }
